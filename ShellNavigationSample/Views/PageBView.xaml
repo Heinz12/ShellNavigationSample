@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="ShellNavigationSample.Views.PageBView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:viewModels="clr-namespace:ShellNavigationSample.ViewModels"
+    Title="PageBView"
+    x:DataType="viewModels:PageBViewModel">
+    <VerticalStackLayout>
+        <Label
+            HorizontalOptions="Center"
+            Text="Page B"
+            VerticalOptions="Center" />
+        <Button Command="{Binding ShowPageACommand}" Text="Navigate to Page A" />
+    </VerticalStackLayout>
+</ContentPage>
