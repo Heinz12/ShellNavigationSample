@@ -12,5 +12,7 @@
             Text="Page B"
             VerticalOptions="Center" />
         <Button Command="{Binding ShowPageACommand}" Text="Navigate to Page A" />
+        <Button Command="{Binding NavigateBackCommand}" Text="Navigate back" />
+        <Label Text="{Binding HashCode}" />
     </VerticalStackLayout>
 </ContentPage>

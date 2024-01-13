@@ -18,6 +18,9 @@ namespace ShellNavigationSample.ViewModels.Base
         [ObservableProperty]
         private bool _isInitialized;
 
+        [ObservableProperty]
+        private string _hashCode;
+
         public INavigationService NavigationService { get; }
 
         public IAsyncRelayCommand InitializeAsyncCommand { get; }
@@ -25,6 +28,7 @@ namespace ShellNavigationSample.ViewModels.Base
         public ViewModelBase(INavigationService navigationService)
         {
             NavigationService = navigationService;
+            HashCode = this.GetHashCode().ToString("X8");
 
             InitializeAsyncCommand =
                 new AsyncRelayCommand(
