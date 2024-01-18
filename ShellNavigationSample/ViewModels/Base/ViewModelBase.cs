@@ -68,10 +68,16 @@ namespace ShellNavigationSample.ViewModels.Base
         }
 
         [RelayCommand]
-        private Task NavigateToRouteAsync(string route)
+        private async Task NavigateToRouteAsync(string route)
         {
-            return NavigationService.NavigateToAsync(route);
+            try
+            {
+                await NavigationService.NavigateToAsync(route);
+            }
+            catch (Exception ex)
+            {
+                await Shell.Current.DisplayAlert("Error", ex.Message, "OK");
+            }
         }
-
     }
 }
