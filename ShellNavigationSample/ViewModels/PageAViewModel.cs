@@ -23,5 +23,11 @@ namespace ShellNavigationSample.ViewModels
         {
             await NavigationService.NavigateToAsync("PageAView/PageBView/PageAView/PageBView/PageAView/PageBView");
         }
+      
+        [RelayCommand]
+        private async Task NavigateAbsoluteAsync()
+        {
+            await NavigationService.NavigateToAsync("//MainPage/PageAView/PageBView/PageAView/PageBView");
+        }
     }
 }

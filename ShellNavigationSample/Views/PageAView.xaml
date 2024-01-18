@@ -25,6 +25,10 @@
                 Margin="10,5"
                 Command="{Binding NavigateDeepCommand}"
                 Text="Navigate To A/B/A/B/A/B" />
+            <Button
+                Margin="10,5"
+                Command="{Binding NavigateAbsoluteCommand}"
+                Text="Navigate To //Main/A/B/A/B" />
             <Label Text="{Binding HashCode}" />
         </VerticalStackLayout>
     </views:BasePage.BasePageContent>
