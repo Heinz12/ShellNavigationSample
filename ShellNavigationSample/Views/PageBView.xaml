@@ -1,18 +1,27 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage
+<views:BasePage
     x:Class="ShellNavigationSample.Views.PageBView"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:viewModels="clr-namespace:ShellNavigationSample.ViewModels"
+    xmlns:views="clr-namespace:ShellNavigationSample.Views"
     Title="PageBView"
     x:DataType="viewModels:PageBViewModel">
-    <VerticalStackLayout>
-        <Label
-            HorizontalOptions="Center"
-            Text="Page B"
-            VerticalOptions="Center" />
-        <Button Command="{Binding ShowPageACommand}" Text="Navigate to Page A" />
-        <Button Command="{Binding NavigateBackCommand}" Text="Navigate back" />
-        <Label Text="{Binding HashCode}" />
-    </VerticalStackLayout>
-</ContentPage>
+    <views:BasePage.BasePageContent>
+        <VerticalStackLayout>
+            <Label
+                HorizontalOptions="Center"
+                Text="Page B"
+                VerticalOptions="Center" />
+            <Button
+                Margin="10,5"
+                Command="{Binding ShowPageACommand}"
+                Text="Navigate to Page A" />
+            <Button
+                Margin="10,5"
+                Command="{Binding NavigateBackCommand}"
+                Text="Navigate back" />
+            <Label Text="{Binding HashCode}" />
+        </VerticalStackLayout>
+    </views:BasePage.BasePageContent>
+</views:BasePage>

@@ -2,11 +2,10 @@ using ShellNavigationSample.ViewModels;
 
 namespace ShellNavigationSample.Views;
 
-public partial class PageBView : ContentPage
+public partial class PageBView : BasePage
 {
-	public PageBView(PageBViewModel viewModel)
+	public PageBView(PageBViewModel viewModel) : base(viewModel)
 	{
-		BindingContext = viewModel;
 		InitializeComponent();
 	}
 }
