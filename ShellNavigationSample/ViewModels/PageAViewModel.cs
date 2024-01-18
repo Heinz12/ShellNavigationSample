@@ -15,19 +15,19 @@ namespace ShellNavigationSample.ViewModels
         [RelayCommand]
         private async Task ShowPageBAsync()
         {
-            await NavigationService.NavigateToAsync(nameof(PageBView));
+            await NavigationService.NavigateToAsync("B");
         }
 
         [RelayCommand]
         private async Task NavigateDeepAsync()
         {
-            await NavigationService.NavigateToAsync("PageAView/PageBView/PageAView/PageBView/PageAView/PageBView");
+            await NavigationService.NavigateToAsync("A/B/A/B/A/B");
         }
       
         [RelayCommand]
         private async Task NavigateAbsoluteAsync()
         {
-            await NavigationService.NavigateToAsync("//MainPage/PageAView/PageBView/PageAView/PageBView");
+            await NavigationService.NavigateToAsync("//Main/A/B/A/B");
         }
     }
 }

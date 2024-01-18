@@ -22,7 +22,7 @@ namespace ShellNavigationSample
 
             SemanticScreenReader.Announce(CounterBtn.Text);
 
-            Shell.Current.GoToAsync(nameof(PageAView));
+            Shell.Current.GoToAsync("A");
         }
     }
 

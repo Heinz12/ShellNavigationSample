@@ -12,8 +12,8 @@ namespace ShellNavigationSample
 
         private static void InitializeRouting()
         {
-            Routing.RegisterRoute(nameof(PageAView), typeof(PageAView));
-            Routing.RegisterRoute(nameof(PageBView), typeof(PageBView));
+            Routing.RegisterRoute("A", typeof(PageAView));
+            Routing.RegisterRoute("B", typeof(PageBView));
         }
     }
 }

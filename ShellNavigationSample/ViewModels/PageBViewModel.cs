@@ -15,7 +15,7 @@ namespace ShellNavigationSample.ViewModels
         [RelayCommand]
         private async Task ShowPageAAsync()
         {
-            await NavigationService.NavigateToAsync(nameof(PageAView));
+            await NavigationService.NavigateToAsync("A");
         }
     }
 }

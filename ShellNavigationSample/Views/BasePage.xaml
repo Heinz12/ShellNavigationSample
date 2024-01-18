@@ -27,8 +27,8 @@
                         <Label Text="Navigate to:" VerticalOptions="Center" />
                         <Entry
                             x:Name="RouteEntry"
-                            Placeholder="Enter Route here e.g. //MainPage/PageAView"
-                            Text="//MainPage/PageAView/PageBView"
+                            Placeholder="Enter Route here e.g. //Main/A/B"
+                            Text="//Main/A/B"
                             VerticalOptions="Center" />
                     </HorizontalStackLayout>
                     <Button
