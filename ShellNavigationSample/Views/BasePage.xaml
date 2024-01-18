@@ -14,23 +14,21 @@
         RowDefinitions="Auto,*"
         RowSpacing="0">
         <VerticalStackLayout>
-            <HorizontalStackLayout Margin="10,5">
-                <Label Text="Current Path:" />
-                <Label
-                    x:Name="NaviPath"
-                    Grid.Row="0"
-                    Margin="10,0,0,0" />
-            </HorizontalStackLayout>
             <Border Margin="10,5">
-                <VerticalStackLayout>
-                    <HorizontalStackLayout Margin="10,5">
-                        <Label Text="Navigate to:" VerticalOptions="Center" />
-                        <Entry
-                            x:Name="RouteEntry"
-                            Placeholder="Enter Route here e.g. //Main/A/B"
-                            Text="//Main/A/B"
-                            VerticalOptions="Center" />
-                    </HorizontalStackLayout>
+                <VerticalStackLayout Margin="10,5">
+                    <Label Text="Current Path:" />
+                    <Label x:Name="NaviPath" FontAttributes="Bold" />
+                </VerticalStackLayout>
+            </Border>
+            <Border Margin="10,5">
+                <VerticalStackLayout Margin="10,5">
+                    <Label Text="Navigate to:" VerticalOptions="Center" />
+                    <Entry
+                        x:Name="RouteEntry"
+                        FontAttributes="Bold"
+                        Placeholder="Enter Route here e.g. //Main/A/B"
+                        Text="//Main/A/B"
+                        VerticalOptions="Center" />
                     <Button
                         Margin="10,5"
                         Command="{Binding NavigateToRouteCommand}"
