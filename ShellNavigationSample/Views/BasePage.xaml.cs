@@ -31,6 +31,7 @@ public partial class BasePage : ContentPage
     {
         var path = $"{Shell.Current.CurrentState.Location}";
         RouteEntry.Text = path;
-        NaviPath.Text = $"{path} last navigated to at {DateTime.Now:HH:mm:ss}";
+        NaviPath.Text = path;
+        Info.Text = $"last navigated to at {DateTime.Now:HH:mm:ss}";
     }
 }

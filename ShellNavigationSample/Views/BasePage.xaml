@@ -18,6 +18,7 @@
                 <VerticalStackLayout Margin="10,5">
                     <Label Text="Current Path:" />
                     <Label x:Name="NaviPath" FontAttributes="Bold" />
+                    <Label x:Name="Info" FontAttributes="Italic" />
                 </VerticalStackLayout>
             </Border>
             <Border Margin="10,5">
@@ -26,6 +27,7 @@
                     <Entry
                         x:Name="RouteEntry"
                         FontAttributes="Bold"
+                        FontSize="20"
                         Placeholder="Enter Route here e.g. //Main/A/B"
                         Text="//Main/A/B"
                         VerticalOptions="Center" />
