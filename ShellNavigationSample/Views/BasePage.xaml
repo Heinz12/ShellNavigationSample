@@ -3,7 +3,9 @@
     x:Class="ShellNavigationSample.Views.BasePage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    Title="BasePage">
+    xmlns:viewModelBase="clr-namespace:ShellNavigationSample.ViewModels.Base"
+    Title="BasePage"
+    x:DataType="viewModelBase:ViewModelBase">
     <Grid
         x:Name="RootGrid"
         AbsoluteLayout.LayoutBounds="0,0,1,1"
@@ -11,11 +13,32 @@
         ColumnSpacing="0"
         RowDefinitions="Auto,*"
         RowSpacing="0">
-        <Label
-            x:Name="NaviPath"
-            Grid.Row="0"
-            Margin="10,0" />
-
+        <VerticalStackLayout>
+            <HorizontalStackLayout Margin="10,5">
+                <Label Text="Current Path:" />
+                <Label
+                    x:Name="NaviPath"
+                    Grid.Row="0"
+                    Margin="10,0,0,0" />
+            </HorizontalStackLayout>
+            <Border Margin="10,5">
+                <VerticalStackLayout>
+                    <HorizontalStackLayout Margin="10,5">
+                        <Label Text="Navigate to:" VerticalOptions="Center" />
+                        <Entry
+                            x:Name="RouteEntry"
+                            Placeholder="Enter Route here e.g. //MainPage/PageAView"
+                            Text="//MainPage/PageAView/PageBView"
+                            VerticalOptions="Center" />
+                    </HorizontalStackLayout>
+                    <Button
+                        Margin="10,5"
+                        Command="{Binding NavigateToRouteCommand}"
+                        CommandParameter="{Binding Source={x:Reference RouteEntry}, Path=Text}"
+                        Text="NavigateTo" />
+                </VerticalStackLayout>
+            </Border>
+        </VerticalStackLayout>
         <!--  This is the placeholder where actual content will be loaded into...  -->
         <Grid
             x:Name="BaseContentGrid"

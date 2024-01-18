@@ -66,5 +66,12 @@ namespace ShellNavigationSample.ViewModels.Base
         {
             return NavigationService.PopAsync();
         }
+
+        [RelayCommand]
+        private Task NavigateToRouteAsync(string route)
+        {
+            return NavigationService.NavigateToAsync(route);
+        }
+
     }
 }
