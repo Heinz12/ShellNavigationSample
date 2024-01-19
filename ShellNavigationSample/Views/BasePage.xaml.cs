@@ -7,6 +7,8 @@ public partial class BasePage : ContentPage
     private bool _isInitialized;
 
     public IList<IView> BasePageContent => BaseContentGrid.Children;
+    public Label ShellPreviousLabel => ShellPrevious;
+    public Label ShellSourceLabel => ShellSource;
 
     public BasePage(object viewModel)
 	{

@@ -16,6 +16,9 @@
         <VerticalStackLayout>
             <Border Margin="10,5">
                 <VerticalStackLayout Margin="10,5">
+                    <Label x:Name="ShellSource" />
+                    <Label Text="Previous Path:" />
+                    <Label x:Name="ShellPrevious" />
                     <Label Text="Current Path:" />
                     <Label x:Name="NaviPath" FontAttributes="Bold" />
                     <Label x:Name="Info" FontAttributes="Italic" />
