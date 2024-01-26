@@ -4,6 +4,7 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:viewModelBase="clr-namespace:ShellNavigationSample.ViewModels.Base"
+    x:Name="bp"
     Title="BasePage"
     x:DataType="viewModelBase:ViewModelBase">
     <Grid
@@ -48,6 +49,15 @@
                         Text="NavigateTo" />
                 </VerticalStackLayout>
             </Border>
+            <Label
+                FontSize="Large"
+                Text="{Binding Source={x:Reference bp}, Path=Param1, StringFormat='Param1={0}'}"
+                VerticalOptions="Center" />
+            <Label
+                FontSize="Large"
+                Text="{Binding Source={x:Reference bp}, Path=Param2, StringFormat='Param2={0}'}"
+                VerticalOptions="Center" />
+
         </VerticalStackLayout>
         <!--  This is the placeholder where actual content will be loaded into...  -->
         <Grid
