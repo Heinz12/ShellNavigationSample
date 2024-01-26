@@ -8,7 +8,7 @@ namespace ShellNavigationSample.Services.Navigation
 {
     public interface INavigationService
     {
-        Task NavigateToAsync(string route, IDictionary<string, object> routeParameters = null);
+        Task NavigateToAsync(string route, IDictionary<string, object> routeParameters = null, bool createNewShell = false);
 
         Task PopAsync();
     }

@@ -2,8 +2,13 @@
 {
     public class NavigationService : INavigationService
     {
-        public Task NavigateToAsync(string route, IDictionary<string, object> routeParameters = null)
+        public Task NavigateToAsync(string route, IDictionary<string, object> routeParameters = null, bool createNewShell = false)
         {
+            if (createNewShell)
+            {
+                Application.Current.MainPage = new AppShell();
+            }
+
             var shellNavigation = new ShellNavigationState(route);
 
             return routeParameters != null

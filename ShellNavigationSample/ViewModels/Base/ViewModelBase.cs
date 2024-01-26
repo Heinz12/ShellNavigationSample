@@ -19,6 +19,9 @@ namespace ShellNavigationSample.ViewModels.Base
         private bool _isInitialized;
 
         [ObservableProperty]
+        private bool _createNewShell;
+
+        [ObservableProperty]
         private string _hashCode;
 
         public INavigationService NavigationService { get; }
@@ -72,7 +75,7 @@ namespace ShellNavigationSample.ViewModels.Base
         {
             try
             {
-                await NavigationService.NavigateToAsync(route);
+                await NavigationService.NavigateToAsync(route, createNewShell: CreateNewShell);
             }
             catch (Exception ex)
             {
