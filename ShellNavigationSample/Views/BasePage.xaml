@@ -57,6 +57,14 @@
                 FontSize="Large"
                 Text="{Binding Source={x:Reference bp}, Path=Param2, StringFormat='Param2={0}'}"
                 VerticalOptions="Center" />
+            <Label
+                FontSize="Large"
+                Text="{Binding Param1, StringFormat='Param1={0}'}"
+                VerticalOptions="Center" />
+            <Label
+                FontSize="Large"
+                Text="{Binding Path=Param2, StringFormat='Param2={0}'}"
+                VerticalOptions="Center" />
 
         </VerticalStackLayout>
         <!--  This is the placeholder where actual content will be loaded into...  -->

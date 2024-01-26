@@ -57,7 +57,7 @@ public partial class BasePage : ContentPage, IQueryAttributable
     {
         foreach (var kvp in query)
         {
-            Debug.WriteLine($"{kvp.Key}={kvp.Value}");
+            Debug.WriteLine($"BasePage: {kvp.Key}={kvp.Value}");
         }
     }
 }

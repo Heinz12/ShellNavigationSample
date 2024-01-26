@@ -3,13 +3,16 @@ using CommunityToolkit.Mvvm.Input;
 using ShellNavigationSample.Services.Navigation;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace ShellNavigationSample.ViewModels.Base
 {
-    public abstract partial class ViewModelBase : ObservableObject
+    [QueryProperty(nameof(Param1), "p1")]
+    [QueryProperty(nameof(Param2), "p2")]
+    public abstract partial class ViewModelBase : ObservableObject, IQueryAttributable
     {
         private long _isBusy;
 
@@ -17,6 +20,12 @@ namespace ShellNavigationSample.ViewModels.Base
 
         [ObservableProperty]
         private bool _isInitialized;
+
+        [ObservableProperty]
+        private string _param1;
+        
+        [ObservableProperty]
+        private string _param2;
 
         [ObservableProperty]
         private bool _createNewShell;
@@ -80,6 +89,14 @@ namespace ShellNavigationSample.ViewModels.Base
             catch (Exception ex)
             {
                 await Shell.Current.DisplayAlert("Error", ex.Message, "OK");
+            }
+        }
+
+        public void ApplyQueryAttributes(IDictionary<string, object> query)
+        {
+            foreach (var kvp in query)
+            {
+                Debug.WriteLine($"ViewModelBase: {kvp.Key}={kvp.Value}");
             }
         }
     }
